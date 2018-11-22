@@ -1,0 +1,161 @@
+/*GENERAL LAYOUT*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+}
+
+
+.row {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/*HEADER*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid #555;
+   
+}
+
+
+.search-bar {
+    margin: 125px 30px 60px 0px;
+}
+
+
+.header-logo {
+    height: 200px;  
+}
+
+
+
+/*MAIN BODY*/
+
+.books-grid {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+   
+}
+
+
+.book-cover {
+    width: 320px;
+	height: 480px;
+   
+}
+
+.single-book {
+    flex-grow: 1;
+    
+}
+
+
+/*FLIPPER*/
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+    margin-bottom: 20px;
+}
+	
+
+/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+.back {
+    background: linear-gradient(to bottom, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%); 
+}
+
+.back p, a {
+    background-color: transparent;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.back {
+    text-align: center;
+	transform: rotateY(180deg);
+}
+
+
+
+.back-title {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 120%;
+    background-color: transparent;
+    font: "Arial";
+    text-align: center;
+    margin: 20px 10px;
+}
+
+
+.back-description {
+    background-color: transparent;
+    text-align: center;
+    font-size: 90%;
+    margin: 20px 4px;
+    z-index: 10;
+}
+
+
+.btn{
+    color: white;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(202, 60, 60);
+}
+
+.back-link {
+    background-color: transparent;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*SEARCH FORM*/

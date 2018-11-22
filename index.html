@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css"/>
+<link rel="stylesheet" type="text/css" href='/style.css'>
+<title> Once Upon a Book </title>
+</head>
+ 
+<body>
+
+
+<div id="vue-app">
+
+<header class="row">
+   <div class="header-logo"><img src="Green%20Logo.png" class="header-logo" alt="Logo"></div>
+   <div class="search-bar"><input type="text" v-model="search" placeholder="Search Books"></div>
+</header>
+
+
+
+
+
+
+<div class="row books-grid">
+
+    <div v-for="book in filteredBooks" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper single-book">
+            <div class="front">
+                <img v-bind:src="book.cover" class="book-cover">
+            </div>
+            <div class="back">
+          
+          
+                <p class="back-title back-center">{{book.title}}</p>
+                <p class="back-description back-center">{{book.description}}</p>
+                <button class="btn back-center"><a :href="book.detail" data-fancybox="images" data-caption="" class="back-link">More Info</a></button>
+
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+
+<script src='main.js'></script>
+
+</body>
+</html>
+
+
+
+
